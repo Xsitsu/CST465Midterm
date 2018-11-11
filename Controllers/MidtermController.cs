@@ -13,7 +13,8 @@ namespace Midterm.Controllers
         private List<TestQuestion> GetList()
         {
             string json = System.IO.File.ReadAllText(@"JSON/Midterm.json");
-            QuestionBank questions = JsonConvert.DeserializeObject<QuestionBank>(json);
+            QuestionBank questions = new QuestionBank();
+            questions.Questions = JsonConvert.DeserializeObject<List<Question>>(json);
             return questions.ToTestQuestions();
         }
 
@@ -25,12 +26,17 @@ namespace Midterm.Controllers
         [HttpGet]
         public IActionResult TakeTest()
         {
-            return View();
+            List<TestQuestion> questions = GetList();
+            return View("TakeTest", questions);
         }
 
         [HttpPost]
-        public IActionResult TakeTestx()
+        public IActionResult TakeTest(List<TestQuestion> questions)
         {
+            if (!ModelState.IsValid)
+            {
+
+            }
             return View();
         }
     }
