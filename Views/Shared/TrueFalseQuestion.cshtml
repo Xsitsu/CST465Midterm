@@ -2,6 +2,20 @@
 
 <div class="form-group">
     @Html.Partial("QuestionHeader", Model)
-    @Html.DropDownListFor(m => m.Answer, new SelectList("True", "False"), new { @class = "form-control" })
+
+    @{
+        var selectList = new SelectList(
+            new List<SelectListItem>
+            {
+            new SelectListItem {Text = "", Value = ""},
+            new SelectListItem {Text = "True", Value = "False"},
+            new SelectListItem {Text = "False", Value = "False"},
+            }, "Value", "Text");
+
+
+        @Html.DropDownListFor(m => m.Answer, selectList, new { @class = "form-control" })
+
+    }
+
     @Html.ValidationMessageFor(m => m.Answer)
 </div>
