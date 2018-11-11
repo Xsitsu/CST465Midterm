@@ -10,5 +10,6 @@ namespace Midterm.Models
     {
         [Required]
         public override string Answer { get; set; }
+        public IList<string> Choices { get; set; }
     }
 }
