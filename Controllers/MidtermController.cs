@@ -10,12 +10,17 @@ namespace Midterm.Controllers
 {
     public class MidtermController : Controller
     {
+        private QuestionBank _bank;
+
         public QuestionBank GetList()
         {
-            string json = System.IO.File.ReadAllText(@"JSON/Midterm.json");
-            QuestionBank questions = new QuestionBank();
-            questions.Questions = JsonConvert.DeserializeObject<List<Question>>(json);
-            return questions;
+            if (_bank == null)
+            {
+                string json = System.IO.File.ReadAllText(@"JSON/Midterm.json");
+                _bank = new QuestionBank();
+                _bank.Questions = JsonConvert.DeserializeObject<List<Question>>(json);
+            }
+            return _bank;
         }
 
         public IActionResult Index()
@@ -35,9 +40,9 @@ namespace Midterm.Controllers
         {
             if (!ModelState.IsValid)
             {
-
+                return View("TakeTest", questions);
             }
-            return View();
+            return View("DisplayResults", questions);
         }
     }
 }
