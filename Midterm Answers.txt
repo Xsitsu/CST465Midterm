@@ -1,0 +1,76 @@
+1) False
+
+2) False
+
+3) False
+
+4) False
+
+5) False
+
+6) True
+
+7) False
+
+8) False
+
+9) False
+
+10) True
+
+11) Inline, Internal, External, Browser
+
+12) Inline, ID, Class, Element
+
+13) To avoid SQL injection
+
+14) ???
+
+15) 60 / 45
+
+16) 59 / 38
+
+17) ID:1, Class/Attribute:2, Element:5
+
+18) Set variables used by other views.
+
+19) Include/import namespaces used by other views.
+
+20) GET
+
+21) Declare to the browswer which version of HTML is in use.
+
+22) Both are used to style elements. Block causes newlines and inline doesn't.
+
+23) Used for people who use screen readers.
+
+24) usin(){ } is for using IDisposable classes which need to be cleaned up after use. It automatically handles cleaning them up at the end of the using statement block.
+
+25) It means that HTML also carries meaning/intention with how the document is structured.
+
+26) Models have input validation while business objects don't.
+
+27) Code is easier to be changed. You can substitute in new dependencies and change which one you inject easily.
+
+28) Hyper Text Markup Language
+
+29) All of the above
+
+30) ul
+
+31) Document Object Model
+
+32) div#specificBox.color
+
+33) /Index
+
+34) The Controller
+
+35) UPDATE
+
+36) header
+
+37) All of the above
+
+38) FirstName:Jordan
+
