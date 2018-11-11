@@ -1,0 +1,7 @@
+﻿@model LongAnswerQuestion
+
+<div class="form-group">
+    @Html.Partial("QuestionHeader", Model)
+    @Html.TextAreaFor(m => m.Answer, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Answer)
+</div>

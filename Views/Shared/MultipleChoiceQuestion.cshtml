@@ -1,0 +1,12 @@
+﻿@model MultipleChoiceQuestion
+
+<div class="form-group">
+    @Html.Partial("QuestionHeader", Model)
+
+    @foreach (string choice in Model.Choices)
+    {
+        @Html.RadioButtonFor(m => m.Answer, choice)
+    }
+
+    @Html.ValidationMessageFor(m => m.Answer)
+</div>

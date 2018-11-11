@@ -1,0 +1,7 @@
+﻿@model ShortAnswerQuestion
+
+<div class="form-group">
+    @Html.Partial("QuestionHeader", Model)
+    @Html.TextBoxFor(m => m.Answer, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Answer)
+</div>

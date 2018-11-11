@@ -10,12 +10,12 @@ namespace Midterm.Controllers
 {
     public class MidtermController : Controller
     {
-        private List<TestQuestion> GetList()
+        public QuestionBank GetList()
         {
             string json = System.IO.File.ReadAllText(@"JSON/Midterm.json");
             QuestionBank questions = new QuestionBank();
             questions.Questions = JsonConvert.DeserializeObject<List<Question>>(json);
-            return questions.ToTestQuestions();
+            return questions;
         }
 
         public IActionResult Index()
@@ -26,7 +26,7 @@ namespace Midterm.Controllers
         [HttpGet]
         public IActionResult TakeTest()
         {
-            List<TestQuestion> questions = GetList();
+            List<TestQuestion> questions = GetList().ToTestQuestions();
             return View("TakeTest", questions);
         }
 

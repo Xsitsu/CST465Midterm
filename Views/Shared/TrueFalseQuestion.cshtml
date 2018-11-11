@@ -1,0 +1,7 @@
+﻿@model TrueFalseQuestion
+
+<div class="form-group">
+    @Html.Partial("QuestionHeader", Model)
+    @Html.DropDownListFor(m => m.Answer, new SelectList("True", "False"), new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Answer)
+</div>
